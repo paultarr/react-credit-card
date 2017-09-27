@@ -91,14 +91,29 @@
   margin-bottom: 30px;
 }
 
-.react-credit-card__name{
+.react-credit-card__firstName{
   text-transform: uppercase;
   font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
   font-size: 20px;
   max-height: 45px;
   position: absolute;
   bottom: 0;
-  width: 190px;
+  width: 90px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: horizontal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2em;
+}
+
+.react-credit-card__lastName{
+  text-transform: uppercase;
+  font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+  font-size: 20px;
+  max-height: 45px;
+  position: absolute;
+  bottom: 0;
+  width: 90px;
   -webkit-line-clamp: 2;
   -webkit-box-orient: horizontal;
   overflow: hidden;

@@ -11,10 +11,12 @@ module.exports = React.createClass
   getDefaultProps:->
     number: null
     cvc: null
-    name: ''
+    firstName: ''
+    lastName: ''
     expiry: ''
     focused: null
-    namePlaceholder: 'FULL NAME'
+    firstNamePlaceholder: 'FIRST NAME'
+    lastNamePlaceholder: 'LAST NAME'
     expiryBefore: 'month/year'
     expiryAfter: 'valid thru'
     shinyAfterBack: ''
@@ -34,7 +36,8 @@ module.exports = React.createClass
             />
             {if isAmex then <div className = {@displayClassName("cvc_front")}>{@getValue("cvc")}</div>}
             <div className = {@displayClassName("number")}>{@getValue("number")}</div>
-            <div className = {@displayClassName("name")}  >{@getValue("name")}</div>
+            <div className = {@displayClassName("firstName")}  >{@getValue("firstName")}</div>
+            <div className = {@displayClassName("lastName")}  >{@getValue("lastName")}</div>
             <div
               className = {@displayClassName("expiry")}
               data-before = {@props.expiryBefore}
@@ -107,11 +110,17 @@ module.exports = React.createClass
 
     return string
 
-  name:->
-    if @props.name is ""
-      return @props.namePlaceholder
+  firstName:->
+    if @props.firstName is ""
+      return @props.firstNamePlaceholder
     else
-      return @props.name
+      return @props.firstName
+
+  lastName:->
+    if @props.lastName is ""
+      return @props.lastNamePlaceholder
+    else
+      return @props.lastName
 
   expiry:->
     if @props.expiry is ""
